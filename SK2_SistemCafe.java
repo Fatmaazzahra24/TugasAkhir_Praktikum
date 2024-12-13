@@ -71,6 +71,7 @@ public class SK2_SistemCafe {
             pesanan[TotalPesanan][2] = namaMenu;
             pesanan[TotalPesanan][3] = jumlahItem;
             pesanan[TotalPesanan][4] = totalHarga;
+            totalPesanan++;
 
             System.out.println("Pesanan berhasil ditambahkan");
         }   
