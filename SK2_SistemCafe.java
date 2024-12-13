@@ -52,6 +52,11 @@ public class SK2_SistemCafe {
 
             if (pilihanMenu == 0) break;
 
+            if (pilihanMenu < 1 || pilihanMenu > MenuCafe.length) {
+                System.out.println("Nomor menu tidak valid. coba lagi.");
+                continue;
+            }
+
             String namaMenu = MenuCafe[pilihanMenu - 1];
             int harga = HargaMenu[pilihanMenu - 1];
 
