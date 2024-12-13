@@ -4,6 +4,7 @@ public class SK2_SistemCafe {
     static Scanner sc=new Scanner(System.in);
     static String[] MenuCafe = {"KopiHitam", "Latte","TehTarik", "MiGoreng"};
     static  int  [] HargaMenu = {15000, 22000 , 12000 , 18000};
+    static String [][] pesanan = new String[50][5]
     public static void main(String[] args) {
     int pilihan_menu ;
         
@@ -85,6 +86,10 @@ public class SK2_SistemCafe {
     }
 
     public static void tampilkanPesanan() {
-        System.out.println("ini juga aku tes hehe");
+        System.out.println("===== DAFTAR PESANAN =====");
+        System.out.printf("%-20s %-15s %-15s %-10s %-10s\n", "Nama Pelanggan", "Nomor Meja", "Jumlah", "Total Harga");
+        for (int i = 0; i < totalPesanan; i++) {
+            System.out.printf("%-20s %-15s %-15s %-10s %-10s\n", pesanan[i][0], pesanan[i][1], pesanan[i][2], pesanan[i][3], pesanan[i][4]);
+        }
     }    
 }
