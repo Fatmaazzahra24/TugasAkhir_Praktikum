@@ -44,7 +44,7 @@ public class SK2_SistemCafe {
         while (true) {
             System.out.println("===== MENU KAFE =====");
             for (int i = 0; i < MenuCafe.length; i++) {
-                System.out.printf("%d. %s - Rp %d\n", i +1, MenuCafe[i], HargaMenu[i]);
+                System.out.printf("%d. %s - Rp %d\n", i + 1, MenuCafe[i], HargaMenu[i]);
             }
             System.out.println("0. Selesai");
             System.out.print("Pilih menu (masukkan nomor menu, atau 0 untuk selesai): ");
@@ -75,7 +75,7 @@ public class SK2_SistemCafe {
             System.out.println("Pesanan berhasil ditambahkan");
         }   
 
-        System.out.println("Total harga pesanan: Rp " + totalHargaPesanan)
+        System.out.println("Total harga pesanan: Rp " + totalHargaPesanan);
     }
 
     public static void tampilkanPesanan() {
