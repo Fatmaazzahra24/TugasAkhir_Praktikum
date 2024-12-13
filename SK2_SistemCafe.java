@@ -34,7 +34,50 @@ public class SK2_SistemCafe {
     }
     public static void tambahpesanan() {
         System.out.println("tes fungsi agar bisa ku run ya");
+        String namaPelanggan = sc.nextLine();
+
+        System.err.print("Masukkan nomor meja: ");
+        int nomorMeja = sc.nextInt();
+        sc.nextLine();
+        int totalHargaPesanan = 0;
+
+        while (true) {
+            System.out.println("===== MENU KAFE =====");
+            for (int i = 0; i < MenuCafe.length; i++) {
+                System.out.printf("%d. %s - Rp %d\n", i +1, MenuCafe[i], HargaMenu[i]);
+            }
+            System.out.println("0. Selesai");
+            System.out.print("Pilih menu (masukkan nomor menu, atau 0 untuk selesai): ");
+            int pilihanMenu = sc.nextInt();
+
+            if (pilihanMenu == 0) break;
+
+            String namaMenu = MenuCafe[pilihanMenu - 1];
+            int harga = HargaMenu[pilihanMenu - 1];
+
+            System.out.print("Masukkan jumlah item untuk " + namaMenu + ": ");
+            int jumlahItem = sc.nextInt();
+
+            if (jumlahItem <= 0) {
+                System.out.println("Anda belum memasukkan item apapun, coba lagi");
+                continue;
+            }
+
+            int totalHarga = jumlahItem * harga;
+            totalHargaPesanan += totalHarga;
+
+            pesanan[TotalPesanan][0] = namaPelanggan;
+            pesanan[TotalPesanan][1] = nomorMeja;
+            pesanan[TotalPesanan][2] = namaMenu;
+            pesanan[TotalPesanan][3] = jumlahItem;
+            pesanan[TotalPesanan][4] = totalHarga;
+
+            System.out.println("Pesanan berhasil ditambahkan");
+        }   
+
+        System.out.println("Total harga pesanan: Rp " + totalHargaPesanan)
     }
+
     public static void tampilkanPesanan() {
         System.out.println("ini juga aku tes hehe");
     }    
