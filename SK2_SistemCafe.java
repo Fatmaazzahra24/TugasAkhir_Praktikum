@@ -89,39 +89,14 @@ public class SK2_SistemCafe {
             System.out.println("Belum ada pesanan yang terdaftar");
             return;
         }    
-        
-        System.out.println("===== DAFTAR PESANAN =====");
-
-        String pelangganSebelumnya = "";
-        int totalHargaPesanan = 0;
-        
         for (int i = 0; i < TotalPesanan; i++) {
-            String namaPelanggan = pesanan[i][0];
-            String nomorMeja = pesanan[i][1];
-            String namaMenu = pesanan[i][2];
-            int jumlahItem = Integer.parseInt(pesanan[i][3]);
-            int totalHarga = Integer.parseInt(pesanan[i][4]);
-            
+            String namaPelanggan = pesanan [i][0] != null? pesanan [i][0] : "";
+            String nomorMeja = pesanan [i][1] != null? pesanan [i][1] : "";
+            String namaMenu = pesanan [i][2] != null? pesanan [i][2] : "";
+            String jumlah = pesanan [i][3] != null? pesanan [i][3] : "";
+            String totalHarga = pesanan [i][4] != null? pesanan [i][4] : "";
 
-            if (!namaPelanggan.equals(pelangganSebelumnya)) {
-                if(!pelangganSebelumnya.equals(" ") && totalHargaPesanan > 0 ) {
-                    System.out.println("Total harga pesanan : Rp " + totalHargaPesanan);
-                    System.out.println("-------------------------------------------");
-                }
-                totalHargaPesanan = 0;
-
-                System.out.println("Nama pelanggan cafe : " + namaPelanggan);
-                System.out.println("Nomor meja          : " + nomorMeja);
-                System.out.println("Detail Pesanan     : ");
-            }
-            System.out.printf("- %s x %d = %d\n",namaMenu,jumlahItem, totalHarga);
-            totalHargaPesanan += totalHarga;
-            pelangganSebelumnya= namaPelanggan ;
-            
-            if(i == TotalPesanan - 1) {
-                System.out.println("Total harga pesanan : Rp " + totalHargaPesanan);
-                System.out.println("-------------------------------------------");
-            }
+            System.out.printf("%-20s %-15s %-15s %-10s %-10s\n", pesanan[i][0], pesanan[i][1], pesanan[i][2], pesanan[i][3], pesanan[i][4]);
         }
     }
 }
