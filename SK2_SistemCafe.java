@@ -16,7 +16,7 @@ public class SK2_SistemCafe {
             System.out.println("1. Tambahkan Pesanan ");
             System.out.println("2. Tampilkan Daftar Pesanan ");
             System.out.println("3. Keluar  ");
-            System.out.print(" Pilih menu yang tersedia : ");
+            System.out.print("Pilih menu yang tersedia : ");
             pilihan_menu = sc.nextInt();
             sc.nextLine();
 
@@ -35,10 +35,10 @@ public class SK2_SistemCafe {
         }
     }
     public static void tambahpesanan() {
-        System.out.println("tes fungsi agar bisa ku run ya");
+        System.out.print("Masukkan nama pelanggan : ");
         String namaPelanggan = sc.nextLine();
 
-        System.err.print("Masukkan nomor meja: ");
+        System.err.print("Masukkan nomor meja : ");
         int nomorMeja = sc.nextInt();
         sc.nextLine();
         int totalHargaPesanan = 0;
@@ -88,13 +88,20 @@ public class SK2_SistemCafe {
 
     public static void tampilkanPesanan() {
         System.out.println("===== DAFTAR PESANAN =====");
-        System.out.printf("%-20s %-15s %-15s %-10s %-10s\n", "Nama Pelanggan", "Nomor Meja", "Jumlah", "Total Harga");
-        for (int i = 0; i < TotalPesanan; i++) {
-            System.out.printf("%-20s %-15s %-15s %-10s %-10s\n", pesanan[i][0], pesanan[i][1], pesanan[i][2], pesanan[i][3], pesanan[i][4]);
-        }
+        System.out.printf("%-20s %-15s %-15s %-10s %-10s\n", "Nama Pelanggan", "Nomor Meja", "Nama Menu ", "Jumlah", "Total Harga");
         
         if (TotalPesanan == 0) {
             System.out.println("Belum ada pesanan yang terdaftar");
+            return;
         }    
+        for (int i = 0; i < TotalPesanan; i++) {
+            String namaPelanggan = pesanan [i][0] != null? pesanan [i][0] : "";
+            String nomorMeja = pesanan [i][1] != null? pesanan [i][1] : "";
+            String namaMenu = pesanan [i][2] != null? pesanan [i][2] : "";
+            String jumlah = pesanan [i][3] != null? pesanan [i][3] : "";
+            String totalHarga = pesanan [i][4] != null? pesanan [i][4] : "";
+
+            System.out.printf("%-20s %-15s %-15s %-10s %-10s\n", pesanan[i][0], pesanan[i][1], pesanan[i][2], pesanan[i][3], pesanan[i][4]);
+        }
     }
 }
