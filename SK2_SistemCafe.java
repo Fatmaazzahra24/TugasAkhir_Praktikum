@@ -5,6 +5,7 @@ public class SK2_SistemCafe {
     static String[] MenuCafe = {"KopiHitam", "Latte","TehTarik", "MiGoreng"};
     static  int  [] HargaMenu = {15000, 22000 , 12000 , 18000};
     static String [][] pesanan = new String[50][5]
+    static int TotalPesanan = 0;
     public static void main(String[] args) {
     int pilihan_menu ;
         
@@ -77,7 +78,7 @@ public class SK2_SistemCafe {
             pesanan[TotalPesanan][2] = namaMenu;
             pesanan[TotalPesanan][3] = jumlahItem;
             pesanan[TotalPesanan][4] = totalHarga;
-            totalPesanan++;
+            TotalPesanan++;
 
             System.out.println("Pesanan berhasil ditambahkan");
         }   
@@ -88,8 +89,11 @@ public class SK2_SistemCafe {
     public static void tampilkanPesanan() {
         System.out.println("===== DAFTAR PESANAN =====");
         System.out.printf("%-20s %-15s %-15s %-10s %-10s\n", "Nama Pelanggan", "Nomor Meja", "Jumlah", "Total Harga");
-        for (int i = 0; i < totalPesanan; i++) {
+        for (int i = 0; i < TotalPesanan; i++) {
             System.out.printf("%-20s %-15s %-15s %-10s %-10s\n", pesanan[i][0], pesanan[i][1], pesanan[i][2], pesanan[i][3], pesanan[i][4]);
         }
+        
+        if (TotalPesanan == 0) {
+            System.out.println("Belum ada pesanan yang terdaftar");
     }    
 }
