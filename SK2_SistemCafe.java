@@ -108,14 +108,14 @@ public class SK2_SistemCafe {
                     System.out.println("Total Harga Pesanan : Rp " + totalHargaPesanan);
                     System.out.println("-------------------------------------------");
                 }
-                totalHargaPesanan = 0
+                totalHargaPesanan = 0;
 
                 System.out.println("Nama Pelanggan Cafe : " + namaPelanggan);
                 System.out.println("Nomor Meja : " + nomorMeja);
                 System.out.println("Deatil Pesanan : ");
             }
             System.out.printf("- %s x %d = %d\n",namaMenu,jumlahItem, totalHarga);
-            titalHargaPesanan += totalHarga;
+            totalHargaPesanan += totalHarga;
             pelangganSebelumnya = namaPelanggan;
 
             if (i == TotalPesanan - 1) {
